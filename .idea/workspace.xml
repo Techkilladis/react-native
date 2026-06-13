@@ -5,42 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aebf65aa-3467-4602-bec7-9b21bc3b1847" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.claude/settings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vscode/extensions.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AGENTS.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CLAUDE.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(auth)/_layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(auth)/sign-in.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(auth)/sign-up.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(tabs)/insights.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(tabs)/settings.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(tabs)/subscriptions.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(tabs)/subscriptions/[id].tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/_layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/onboarding.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/android-icon-background.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/android-icon-foreground.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/android-icon-monochrome.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/favicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/partial-react-logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/react-logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/react-logo@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/react-logo@3x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/splash-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eslint.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/global.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nativewind-env.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/postcss.config.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,61 +25,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.3067690383714228" />
-      <entry key="MS500" value="3.7288872050618806" />
-      <entry key="S2" value="9.173054466198037" />
-      <entry key="S5" value="13.861422712110228" />
-      <entry key="S10" value="16.4855538633175" />
-      <entry key="S30" value="18.710257907199065" />
-      <entry key="S60" value="19.338934842254734" />
-      <entry key="M2" value="19.665304322900912" />
-      <entry key="M5" value="19.865111369323824" />
-      <entry key="M10" value="19.951381925302126" />
-      <entry key="M15" value="20.316783684319592" />
-      <entry key="M30" value="27.777021638913588" />
-      <entry key="H1" value="58.639567729681964" />
-      <entry key="H2" value="107.73538704909065" />
-      <entry key="H4" value="152.8885233087648" />
-      <entry key="D1" value="208.33520418098365" />
-      <entry key="W1" value="219.9875604629525" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.000000525105985" />
+      <entry key="S2" value="1.036876984987221" />
+      <entry key="S5" value="1.5133069128382652" />
+      <entry key="S10" value="2.7830794605797" />
+      <entry key="S30" value="7.054322052145581" />
+      <entry key="S60" value="10.177980203746328" />
+      <entry key="M2" value="12.617582069207396" />
+      <entry key="M5" value="15.392391513290976" />
+      <entry key="M10" value="19.448453080090538" />
+      <entry key="M15" value="22.693737480565268" />
+      <entry key="M30" value="32.290310968969365" />
+      <entry key="H1" value="61.136938927614906" />
+      <entry key="H2" value="110.59364286471259" />
+      <entry key="H4" value="159.27767403530737" />
+      <entry key="D1" value="222.09544659718836" />
+      <entry key="W1" value="235.648184243752" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="0.0" />
-      <entry key="S2" value="0.0" />
-      <entry key="S5" value="0.0" />
-      <entry key="S10" value="5.3892921673370325E-248" />
-      <entry key="S30" value="8.063395753072029E-83" />
-      <entry key="S60" value="1.844097687902115E-41" />
-      <entry key="M2" value="1.0449359262243409E-20" />
-      <entry key="M5" value="3.780818033208445E-8" />
-      <entry key="M10" value="7.405291581464116E-4" />
-      <entry key="M15" value="0.022333345741152387" />
-      <entry key="M30" value="0.7439347765665193" />
-      <entry key="H1" value="4.490708761147966" />
-      <entry key="H2" value="11.16741260428751" />
-      <entry key="H4" value="17.66475330962318" />
-      <entry key="D1" value="25.92710477859341" />
-      <entry key="W1" value="27.69392454393897" />
+      <entry key="MS100" value="1.1318825312086577E-129" />
+      <entry key="MS500" value="1.6246517080067378E-26" />
+      <entry key="S2" value="3.5701796309402645E-7" />
+      <entry key="S5" value="0.002636792939692864" />
+      <entry key="S10" value="0.0513497121675756" />
+      <entry key="S30" value="0.37168868278800615" />
+      <entry key="S60" value="0.6096627615231277" />
+      <entry key="M2" value="0.7808090429311944" />
+      <entry key="M5" value="0.9057700047482798" />
+      <entry key="M10" value="0.9518762668671172" />
+      <entry key="M15" value="0.9754811799018466" />
+      <entry key="M30" value="1.4270181689396702" />
+      <entry key="H1" value="4.458631675285796" />
+      <entry key="H2" value="10.807993321546155" />
+      <entry key="H4" value="17.556115251903353" />
+      <entry key="D1" value="26.648719437544568" />
+      <entry key="W1" value="28.651252140736748" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.2624228289117387" />
-      <entry key="MS500" value="3.70414837376563" />
-      <entry key="S2" value="9.158243444974316" />
-      <entry key="S5" value="13.852450975027448" />
-      <entry key="S10" value="16.480203954603482" />
-      <entry key="S30" value="18.708228962560312" />
-      <entry key="S60" value="19.33788555952796" />
-      <entry key="M2" value="19.664770637721148" />
-      <entry key="M5" value="19.864895716494523" />
-      <entry key="M10" value="19.952006214216972" />
-      <entry key="M15" value="20.33887475955751" />
-      <entry key="M30" value="28.517912016691135" />
-      <entry key="H1" value="63.12094693430301" />
-      <entry key="H2" value="118.89109526407937" />
-      <entry key="H4" value="170.54398239277614" />
-      <entry key="D1" value="234.26002855307135" />
-      <entry key="W1" value="247.6811368672436" />
+      <entry key="MS100" value="1.415752001408624E-6" />
+      <entry key="MS500" value="0.0676392374263305" />
+      <entry key="S2" value="0.5386154838765186" />
+      <entry key="S5" value="1.2318423639070704" />
+      <entry key="S10" value="2.6226361693940934" />
+      <entry key="S30" value="7.276559114298471" />
+      <entry key="S60" value="10.683222106915768" />
+      <entry key="M2" value="13.334609690967707" />
+      <entry key="M5" value="16.26904781789199" />
+      <entry key="M10" value="20.385069043154303" />
+      <entry key="M15" value="23.658816498779053" />
+      <entry key="M30" value="33.710275324474054" />
+      <entry key="H1" value="65.58572777197406" />
+      <entry key="H2" value="121.39002686588208" />
+      <entry key="H4" value="176.8244132708985" />
+      <entry key="D1" value="248.74179923228525" />
+      <entry key="W1" value="264.29907294033103" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -139,7 +105,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "javascript.preferred.runtime.type.id": "node",
     "junie.onboarding.icon.badge.shown": "true",
     "node.js.detected.package.eslint": "true",
@@ -156,9 +122,9 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/(tabs)" />
       <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$/app/(auth)" />
-      <recent name="$PROJECT_DIR$/app/(tabs)" />
     </key>
   </component>
   <component name="RunManager">
@@ -192,7 +158,7 @@
       <workItem from="1781193543177" duration="525000" />
       <workItem from="1781241413546" duration="3119000" />
       <workItem from="1781325213229" duration="250000" />
-      <workItem from="1781325492528" duration="5270000" />
+      <workItem from="1781325492528" duration="6961000" />
     </task>
     <servers />
   </component>
