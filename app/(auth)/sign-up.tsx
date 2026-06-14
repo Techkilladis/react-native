@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
-import { View, Text, TextInput, Pressable, ActivityIndicator, ScrollView } from 'react-native';
-import { useSignUp, useOAuth } from '@clerk/expo';
-import { useRouter, Link } from 'expo-router';
-import { SafeAreaView as RNSafeAreaView } from 'react-native-safe-area-context';
-import { styled } from 'nativewind';
+
+import { useOAuth, useSignUp } from '@clerk/expo';
+import { Link, useRouter } from 'expo-router';
 import * as WebBrowser from 'expo-web-browser';
+import { styled } from 'nativewind';
+import React, { useState } from 'react';
+import { ActivityIndicator, Pressable, ScrollView, Text, TextInput, View } from 'react-native';
+import { SafeAreaView as RNSafeAreaView } from 'react-native-safe-area-context';
 
 const SafeAreaView = styled(RNSafeAreaView);
 
@@ -87,7 +88,7 @@ export default function SignUp() {
         if (finalizeResult.error) {
           setError(finalizeResult.error.message);
         } else {
-          router.replace('/(tabs)');
+          router.replace('/');
         }
       } else {
         setError(`Verification status incomplete: ${signUp.status}`);
@@ -130,7 +131,7 @@ export default function SignUp() {
 
       if (createdSessionId && setOAuthActive) {
         await setOAuthActive({ session: createdSessionId });
-        router.replace('/(tabs)');
+        router.replace('/');
       }
     } catch (err: any) {
       console.error('OAuth error:', err);
@@ -145,7 +146,7 @@ export default function SignUp() {
     <SafeAreaView className="auth-safe-area">
       <ScrollView className="auth-scroll" contentContainerStyle={{ flexGrow: 1 }} keyboardShouldPersistTaps="handled">
         <View className="auth-content items-center justify-center">
-          
+
           {/* Logo & Brand Block */}
           <View className="auth-brand-block">
             <View className="auth-logo-wrap">
@@ -164,15 +165,15 @@ export default function SignUp() {
             {verifying ? 'Verify account' : 'Create account'}
           </Text>
           <Text className="auth-subtitle">
-            {verifying 
-              ? 'Enter the code sent to your email to complete registration' 
+            {verifying
+              ? 'Enter the code sent to your email to complete registration'
               : 'Sign up to start managing your subscriptions'}
           </Text>
 
           {/* Form Card */}
           <View className="auth-card w-full">
             <View className="auth-form">
-              
+
               {/* General Feedback Message / Error */}
               {error && (
                 <View className={`mb-2 p-3 border rounded-xl ${error.includes('successfully') ? 'bg-success/10 border-success/20' : 'bg-destructive/10 border-destructive/20'}`}>
