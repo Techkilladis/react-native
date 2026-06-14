@@ -1,23 +1,32 @@
 import ListHeading from "@/components/ListHeading";
 import SubscriptionCard from "@/components/SubscriptionCard";
 import UpcomingSubscriptionCard from "@/components/UpcomingSubscriptionCard";
-import { HOME_BALANCE, HOME_SUBSCRIPTIONS, HOME_USER, UPCOMING_SUBSCRIPTIONS } from "@/constants/data";
+import { HOME_BALANCE, HOME_USER, UPCOMING_SUBSCRIPTIONS } from "@/constants/data";
 import { icons } from "@/constants/icons";
 import images from "@/constants/images";
 import "@/global.css";
 import { formatCurrency } from "@/lib/utils";
+import { useClerk, useUser } from '@clerk/expo';
 import dayjs from "dayjs";
 import { styled } from "nativewind";
+import { PostHogProvider } from 'posthog-react-native';
 import { useState } from "react";
-import { FlatList, Image, Text, View, Pressable } from "react-native";
+import { FlatList, Image, Pressable, Text, View } from "react-native";
 import { SafeAreaView as RNSafeAreaView } from "react-native-safe-area-context";
-import { useClerk, useUser } from '@clerk/expo';
+import CreateSubscriptionModal from "@/components/CreateSubscriptionModal";
+import { useSubscriptions } from "@/lib/subscriptionStore";
 
 const SafeAreaView = styled(RNSafeAreaView);
 export default function App() {
     const { user } = useUser();
     const { signOut } = useClerk();
+    const [subscriptions, addSubscription] = useSubscriptions();
     const [expandedSubscriptionId, setExpandedSubscriptionId] = useState<string | null>(null);
+    const [modalVisible, setModalVisible] = useState(false);
+
+    const handleCreateSubscription = (newSub: Subscription) => {
+        addSubscription(newSub);
+    };
 
     const renderHeader = () => (
         <View>
@@ -29,13 +38,15 @@ export default function App() {
                     </Text>
                 </View>
                 <View className="flex-row items-center gap-3">
-                    <Pressable 
+                    <Pressable
                         onPress={() => signOut()}
                         className="bg-accent/10 border border-accent/20 px-3 py-1.5 rounded-full"
                     >
                         <Text className="text-accent text-xs font-sans-bold">Sign Out</Text>
                     </Pressable>
-                    <Image source={icons.add} className="home-add-icon"></Image>
+                    <Pressable onPress={() => setModalVisible(true)}>
+                        <Image source={icons.add} className="home-add-icon" />
+                    </Pressable>
                 </View>
             </View>
             <View className="home-balance-card">
@@ -61,27 +72,39 @@ export default function App() {
     );
 
     return (
-        <SafeAreaView className="flex-1 bg-background p-5">
-            <FlatList
-                data={HOME_SUBSCRIPTIONS}
-                keyExtractor={(item) => item.id}
-                ListHeaderComponent={renderHeader}
-                renderItem={({ item }) => (
-                    <SubscriptionCard
-                        {...item}
-                        expanded={expandedSubscriptionId === item.id}
-                        onPress={() => setExpandedSubscriptionId((currentId) =>
-                            (currentId === item.id ? null : item.id))
-                        }
-                    />
-                )}
-                contentContainerStyle={{ paddingBottom: 50 }}
-                showsVerticalScrollIndicator={false}
-                extraData={expandedSubscriptionId}
-                ItemSeparatorComponent={()=><View className={"h-4"}></View>}
-                ListEmptyComponent={<Text className={"home-empty-state"}>No Subscriptions Yet.</Text>    }
-                contentContainerClassName="pb-30"
-            />
-        </SafeAreaView >
+        <PostHogProvider apiKey="phc_sobKcs3juNZj7bUx8vgvmPDm97iDagwL8bponoTThPVA" options={{
+            // usually 'https://us.i.posthog.com' or 'https://eu.i.posthog.com'
+
+            host: 'https://us.i.posthog.com',
+        }}>
+            <SafeAreaView className="flex-1 bg-background p-5">
+                <FlatList
+                    data={subscriptions}
+                    keyExtractor={(item) => item.id}
+                    ListHeaderComponent={renderHeader}
+                    renderItem={({ item }) => (
+                        <SubscriptionCard
+                            {...item}
+                            expanded={expandedSubscriptionId === item.id}
+                            onPress={() => setExpandedSubscriptionId((currentId) =>
+                                (currentId === item.id ? null : item.id))
+                            }
+                        />
+                    )}
+                    contentContainerStyle={{ paddingBottom: 50 }}
+                    showsVerticalScrollIndicator={false}
+                    extraData={{ expandedSubscriptionId, subscriptions }}
+                    ItemSeparatorComponent={() => <View className={"h-4"}></View>}
+                    ListEmptyComponent={<Text className={"home-empty-state"}>No Subscriptions Yet.</Text>}
+                    contentContainerClassName="pb-30"
+                />
+                <CreateSubscriptionModal
+                    visible={modalVisible}
+                    onClose={() => setModalVisible(false)}
+                    onSubmit={handleCreateSubscription}
+                />
+            </SafeAreaView >
+        </PostHogProvider>
+
     );
 }

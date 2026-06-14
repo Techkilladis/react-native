@@ -46,7 +46,7 @@ export default function SignIn() {
         if (finalizeResult.error) {
           setError(finalizeResult.error.message);
         } else {
-          router.replace('/(tabs)');
+          router.replace('/');
         }
       } else {
         setError(`Sign-in status incomplete: ${signIn.status}`);
@@ -69,7 +69,7 @@ export default function SignIn() {
 
       if (createdSessionId && setOAuthActive) {
         await setOAuthActive({ session: createdSessionId });
-        router.replace('/(tabs)');
+        router.replace('/');
       }
     } catch (err: any) {
       console.error('OAuth error:', err);
